@@ -7,7 +7,8 @@ FROM node:22-alpine AS build
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-ENV NEXT_TELEMETRY_DISABLED=1
+# Valor provisório só para o build; o segredo real vem das variáveis do container em runtime.
+ENV NEXT_TELEMETRY_DISABLED=1 BETTER_AUTH_SECRET=build-only-placeholder
 RUN npm run build
 
 FROM node:22-alpine AS run

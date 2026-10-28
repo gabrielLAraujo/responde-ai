@@ -23,12 +23,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Link href="/" className="text-lg font-bold">
               Responde<span className="text-emerald-600">Aí</span>
             </Link>
-            <Link
-              href="/gerar"
-              className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700"
-            >
-              Testar grátis
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link href="/painel" className="text-sm font-medium hover:underline">
+                Minha conta
+              </Link>
+              <Link
+                href="/gerar"
+                className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700"
+              >
+                Testar grátis
+              </Link>
+            </div>
           </nav>
         </header>
         <main className="flex-1">{children}</main>
